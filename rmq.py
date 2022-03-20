@@ -1,4 +1,4 @@
-"""Group Memebrs: Matt Moore, Adrian Abeyta, Ahmad Moltafet
+"""Group Memebrs: Matt Moore, Adrian Abeyta, Ahmad Moltafet, Alan Poblette
 """
 
 import pika
@@ -31,19 +31,24 @@ class MessProperties():
     """ Class for holding the properties of a message: type, sent_to, sent_from, rec_time, send_time
     """
 
-    def __init__(self, mess_type: int, to_user: str, from_user: str, sent_time: datetime = datetime.now(), rec_time: datetime = datetime.now()) -> None:
+    def __init__(self, mess_type: int, to_user: str, from_user: str, sent_time: datetime = datetime.now(), rec_time: datetime = datetime.now(), room_name: str = "", room_type: int = ROOM_TYPE_PRIVATE) -> None:
         self.__mess_type = mess_type
         self.__to_user = to_user
         self.__from_user = from_user
         self.__sent_time = sent_time
         self.__rec_time = rec_time
+        self.__room = room_name
+        self.__type = room_type
 
     def to_dict(self):
         return {'mess_type': self.__mess_type,
                 'to_user': self.__to_user,
                 'from_user': self.__from_user,
                 'sent_time': self.__sent_time,
-                'rec_time': self.__rec_time
+                'rec_time': self.__rec_time,
+                'room_name': self.__room,
+                'room_type': self.__type,
+                'sequence number': self.__get_current_sequence_number() + 1
                 }
 
     def __str__(self):
@@ -136,6 +141,9 @@ class ChatRoom(deque):
 
     def __init__(self, queue_name: str = DEFAULT_QUEUE_NAME, member_list: list = [], owner_alias: str = "", room_type: int = ROOM_TYPE_PRIVATE, create_new: bool = True) -> None:
         super(ChatRoom, self).__init__()
+        self.__member_list = member_list
+        self.__owner = owner_alias
+        self.add_room_member(self.owner)
         self.__mongo_client = MongoClient(MONGODB_URL)
         self.__mongo_db = self.__mongo_client.gueshner
         self.__mongo_collection = self.__mongo_db.get_collection(queue_name)
@@ -163,7 +171,6 @@ class ChatRoom(deque):
         if self.__restore() is True:
             self.__dirty = False
         else:
-            self.__group_queue = group_queue
             self.__create_time = datetime.now()
             self.__modify_time = datetime.now()
             self.__dirty = True
@@ -249,7 +256,8 @@ class ChatRoom(deque):
                 mess_dict['mess_props']['to_user'],
                 mess_dict['mess_props']['from_user'],
                 mess_dict['mess_props']['sent_time'],
-                mess_dict['mess_props']['rec_time']
+                mess_dict['mess_props']['rec_time'],
+                mess_dict['mess_props']['room_name']
             )
             new_message = ChatMessage(
                 mess_dict['message'], new_mess_props, None)
@@ -402,40 +410,52 @@ class ChatRoom(deque):
                 f'Message was returned undeliverable. Message: {message} and target queue: {self.rmq_queue}')
             return(False)
 
-        
+    def get_member_list(self) -> list:
+        return self.__member_list
+
+    def add_room_member(self, user_name: str):
+        self.___member_list.add(user_name)
+
+    def remove_group_member(self, user_name: str):
+        self.__member_list.remove(user_name)
+
+    def get_owner(self) -> str:
+        return self.__owner
 
 
 class UserList(list):
 
     def __init__(self, name: str = 'user_list'):
         self.name = name
-    
-    def add(self, user_name: str):
+
+    def register(self, client_alias: str, group_alias: bool):
         # adds new ChatRoom to list
-        list.append(user_name)
+        list.append(client_alias)
 
     def remove(self, user_name: str):
         # removes ChatRoom from list
         list.remove(user_name)
 
-    def get_user_list(self):
+    def get_all_users(self):
         return list
-        
-    def user_in_list(self, user_name: str):
+
+    def get_by_alias(self, user_name: str):
         # see if a user is in the userlist
         for user in list:
             if user == user_name:
                 return True
-        return False
+        return None
+
 
 class RoomList(list):
 
     def __init__(self, name: str = 'room_list'):
         self.name = name
 
-    def add(self, room_name: ChatRoom, group_queue: int):
+    def add(self, room_name: str, member_list: list):
         # adds new ChatRoom to list
-        new_room = ChatRoom(queue_name=room_name, group_queue=group_queue)
+        new_room = ChatRoom(queue_name=room_name, member_list=member_list,
+                            owner_alias="", room_type=ROOM_TYPE_PRIVATE, create_new=True)
         list.append(new_room)
 
     def remove(self, room_name: str):
@@ -451,11 +471,11 @@ class RoomList(list):
 
     def find_by_member(self, member: str):
         # return all chatrooms that have the alias as a member
-        return [room for room in list if member in room.member_list()]
+        return [room for room in list if member in room.get_member_list()]
 
     def find_by_owner(self, owner: str) -> list:
         # return all chatrooms that have the alias as the owner
-        return [room for room in list if owner == room.owner()]
+        return [room for room in list if owner == room.get_owner()]
 
     def persist(self):
         # saving the list metadata

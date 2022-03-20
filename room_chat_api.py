@@ -1,4 +1,4 @@
-"""Group Memebrs: Matt Moore, Adrian Abeyta, Ahmad Moltafet
+"""Group Memebrs: Matt Moore, Adrian Abeyta, Ahmad Moltafet, Alan Poblette
 """
 
 import socket
@@ -28,10 +28,7 @@ logging.basicConfig(filename='chat.log', level=logging.INFO)
 
 @app.get("/")
 async def index():
-    return {"message": {"from": "dan", "to": "you"}}
-
-#
-
+    return {"message": {"from": "me", "to": "you"}}
 
 @app.get("/messages/", status_code=200)
 async def get_messages(request: Request, alias: str, exchange_name: str, group_queue: bool = False, messages_to_get: int = GET_ALL_MESSAGES):
