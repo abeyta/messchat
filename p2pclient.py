@@ -1,3 +1,6 @@
+"""Group Memebrs: Matt Moore, Adrian Abeyta, Ahmad Moltafet
+"""
+
 import socket
 import logging
 import json
@@ -8,22 +11,28 @@ from constants import *
 from users import *
 
 MY_IPADDRESS = ""
-
-# This is an extremely rare case where I have global variables. The first is the documented way to deal with running the app in uvicorn, the second is the 
-# instance of the rmq class that is necessary across all handlers that behave essentially as callbacks. 
+ROOM_TYPE_PUBLIC = 100
+ROOM_TYPE_PRIVATE = 200
+MESSAGE_TYPE_SENT = 1
+MESSAGE_TYPE_RECIEVED = 0
+# This is an extremely rare case where I have global variables. The first is the documented way to deal with running the app in uvicorn, the second is the
+# instance of the rmq class that is necessary across all handlers that behave essentially as callbacks.
 
 
 app = FastAPI()
 logging.basicConfig(filename='chat.log', level=logging.INFO)
 
-#rmq_private = ChatQueue(private_channel_name="eshner")
-#rmq_public = ChatQueue(private_channel_name="eshner")
+#rmq_private = ChatRoom(private_channel_name="eshner")
+#rmq_public = ChatRoom(private_channel_name="eshner")
+
 
 @app.get("/")
 async def index():
     return {"message": {"from": "dan", "to": "you"}}
 
-# 
+#
+
+
 @app.get("/messages/", status_code=200)
 async def get_messages(request: Request, alias: str, exchange_name: str, group_queue: bool = False, messages_to_get: int = GET_ALL_MESSAGES):
     """ Get the messages from the appropriate queue instance. 
@@ -42,16 +51,20 @@ async def get_messages(request: Request, alias: str, exchange_name: str, group_q
         return JSONResponse(status_code=410, content="Invalid alias")
     """
     logging.info("starting messages method")
-    if (queue_instance := ChatQueue(exchange_name=exchange_name, queue_name=alias, group_queue=group_queue)) is None:
+    if (queue_instance := ChatRoom(exchange_name=exchange_name, queue_name=alias, group_queue=group_queue)) is None:
         return JSONResponse(status_code=415, content=f'Chat queue {exchange_name} does not exist.')
-    messages, message_objects, total_mess = queue_instance.get_message_bodies(num_messages=messages_to_get, return_objects=True)
-    logging.info(f'inside messages handler, after getting messages for queue: {alias}\n messages are {messages}')
+    messages, message_objects, total_mess = queue_instance.get_message_bodies(
+        num_messages=messages_to_get, return_objects=True)
+    logging.info(
+        f'inside messages handler, after getting messages for queue: {alias}\n messages are {messages}')
     for message in message_objects:
-        logging.info(f'Message: {message.message} == message props: {message.mess_props} host is {request.client.host}')
+        logging.info(
+            f'Message: {message.message} == message props: {message.mess_props} host is {request.client.host}')
         logging.info(request.json())
     logging.info("End Messages")
     return messages
 #    return JSONResponse(status_code=200, content=messages)
+
 
 @app.get("/users/", status_code=200)
 async def get_users():
@@ -65,6 +78,7 @@ async def get_users():
         return users.get_all_users()
     else:
         return JSONResponse(status_code=405, content="No users have been registered")
+
 
 @app.post("/register/alias", status_code=201)
 async def register_client(client_alias: str, group_alias: bool = False):
@@ -80,6 +94,7 @@ async def register_client(client_alias: str, group_alias: bool = False):
     else:
         return Response(status_code=410, content="User exists already")
 
+
 @app.post("/create/room")
 async def create_room(room_name: str, owner_alias: str, room_type: int = ROOM_TYPE_PRIVATE):
     """ Creating a queue that doesn't exist.
@@ -94,6 +109,7 @@ async def create_room(room_name: str, owner_alias: str, room_type: int = ROOM_TY
         return Response(status_code=201, content="success")
     else:
         return Response(status_code=410, content="User exists already")
+
 
 @app.post("/send/", status_code=201)
 async def send_message(queue_name: str, message: str, from_alias: str, to_alias: str):
@@ -115,8 +131,8 @@ async def send_message(queue_name: str, message: str, from_alias: str, to_alias:
         logging.debug(f'Trying to send, have an invalid destination alias: {to_alias}')
         return JSONResponse(status_code=410, content="Invalid destination alias")
     """
-    rmq_instance = ChatQueue(queue_name = queue_name, exchange_name=queue_name)
-    mess_props = MessProperties(mess_type=MESSAGE_TYPE_SENT, mess_type=MESSAGE_TYPE_SENT, to_user=to_alias, from_user=from_alias)
+    rmq_instance = ChatRoom(queue_name=queue_name, exchange_name=queue_name)
+    mess_props = MessProperties(mess_type=MESSAGE_TYPE_SENT, to_user=to_alias, from_user=from_alias)
     if rmq_instance.send_message(message=message, mess_props=mess_props) is True:
         return "Success"
     else:
@@ -130,6 +146,7 @@ def main():
     logging.basicConfig(filename='chat.log', level=logging.INFO)
     MY_IPADDRESS = socket.gethostbyname(socket.gethostname())
     MY_NAME = input("Please enter your name: ")
+
 
 if __name__ == "__main__":
     main()

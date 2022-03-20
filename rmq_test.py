@@ -1,3 +1,6 @@
+"""Group Memebrs: Matt Moore, Adrian Abeyta, Ahmad Moltafet
+"""
+
 import unittest
 import logging
 from datetime import datetime
