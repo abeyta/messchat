@@ -6,7 +6,10 @@ from datetime import datetime
 from pymongo import MongoClient
 from collections import deque
 from constants import *
-
+MONGODB_HOST = '34.94.157.136'
+MONGODB_USER = 'class'
+MONGODB_PASS = 'CPSC313'
+MONGODB_AUTH_SOURCE = 'cpsc313'
 class MessProperties():
     """ Class for holding the properties of a message: type, sent_to, sent_from, rec_time, send_time
     """
