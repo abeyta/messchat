@@ -31,22 +31,22 @@ class MessProperties():
     """ Class for holding the properties of a message: type, sent_to, sent_from, rec_time, send_time
     """
 
-    def __init__(self, mess_type: int, to_user: str, from_user: str, sent_time: datetime = datetime.now(), rec_time: datetime = datetime.now(), room_name: str = "", room_type: int = ROOM_TYPE_PRIVATE) -> None:
+    def __init__(self, mess_type: int, to_user: str, from_user: str, room_name: str = "", room_type: int = ROOM_TYPE_PRIVATE, sent_time: datetime = datetime.now(), rec_time: datetime = datetime.now()) -> None:
         self.__mess_type = mess_type
+        self.__room = room_name
         self.__to_user = to_user
         self.__from_user = from_user
         self.__sent_time = sent_time
         self.__rec_time = rec_time
-        self.__room = room_name
         self.__type = room_type
 
     def to_dict(self):
         return {'mess_type': self.__mess_type,
+                'room_name': self.__room,
                 'to_user': self.__to_user,
                 'from_user': self.__from_user,
                 'sent_time': self.__sent_time,
                 'rec_time': self.__rec_time,
-                'room_name': self.__room,
                 'room_type': self.__type,
                 'sequence number': self.__get_current_sequence_number() + 1
                 }
@@ -87,7 +87,7 @@ class RMQProperties():
 
 
 class ChatMessage():
-    """ Class for holding individual messages in a chat thread/queue. 
+    """ Class for holding individual messages in a chat thread/queue.
         Each message a message, Message properties, later a sequence number, timestamp
     """
 
@@ -134,19 +134,19 @@ class ChatRoom(deque):
             that describes the queue, and then a bunch of message documents.
         Second, setup rabbitMQ with constants - NOTE: each fanout queue has multiple consumers, so need unique queue names
             We only set up the fanout group queue if the type of queue is public
-        Third, restore data from Mongo to get back all metadata and messages from the DB that we sent or received previously 
+        Third, restore data from Mongo to get back all metadata and messages from the DB that we sent or received previously
             If we can't restore (__restore returns False) then we're setting up a new queue
-
     """
 
     def __init__(self, queue_name: str = DEFAULT_QUEUE_NAME, member_list: list = [], owner_alias: str = "", room_type: int = ROOM_TYPE_PRIVATE, create_new: bool = True) -> None:
         super(ChatRoom, self).__init__()
         self.__member_list = member_list
         self.__owner = owner_alias
-        self.add_room_member(self.owner)
+        self.add_room_member(self.__owner)
         self.__mongo_client = MongoClient(MONGODB_URL)
         self.__mongo_db = self.__mongo_client.gueshner
         self.__mongo_collection = self.__mongo_db.get_collection(queue_name)
+
         if self.__mongo_collection is None:
             self.__mongo_collection = self.__mongo_db.create_collection(
                 queue_name)
@@ -210,6 +210,8 @@ class ChatRoom(deque):
         if message is not None:
             super().appendleft(message)
             self.__persist()
+        self.__mongo_collection.update_one({"_id": 1}, {
+                                           "$push": {"messages": message}})
 
     def length(self) -> int:
         return len(self)
@@ -228,17 +230,17 @@ class ChatRoom(deque):
 
     def find_message(self, message_text: str) -> ChatMessage:
         """ Go through the deque to find a message object that matches the text. Will return the first such message
-            TODO: this should ultimately be done by ID 
+            TODO: this should ultimately be done by ID
         """
         for chat_message in deque:
             if chat_message.message == message_text:
                 return chat_message
 
     def __restore(self) -> bool:
-        """ We're restoring data from Mongo. 
+        """ We're restoring data from Mongo.
             First get the metadata record, but looking for a name key with find_one. If it exists, then we have the doc. If not, bail
                 Fill in the metadata (name, create, modify times - we'll do more later)
-            Second, we're getting the actual messages. Now we look for the key "message". Note that we're using find so we'll get all that 
+            Second, we're getting the actual messages. Now we look for the key "message". Note that we're using find so we'll get all that
                 match (every document with a key called 'message')
                 For each dictionary we get back (the documents), create a message properties instance and a message instance and
                     put them in the deque by calling the put method
@@ -285,7 +287,7 @@ class ChatRoom(deque):
 
     def receive_messages(self, message_list):
         """ This is getting messages from Rabbit with a callback. Not use currently, but want it as we may use it later
-            Declare the queue and give it a simple callback that we define here. 
+            Declare the queue and give it a simple callback that we define here.
             Setup the basic_consume on the channel and start consuming. As messages come in the callback function will be called with the message
         """
         self.rmq_channel.queue_declare(queue='messages')
@@ -302,7 +304,7 @@ class ChatRoom(deque):
         """ Basic retrieve message function from Rabbit.
             If the channel is closed, we're in bad shape. Issue a warning in logs and bail
             Use consume that will get all messages in the queue. The return is three things:
-                1) deliver metadata, what I'm calling m_f - short for message_facts. 
+                1) deliver metadata, what I'm calling m_f - short for message_facts.
                     NOTE: rare use of short variable name 'm_f' Done because we use that prefix so many times in the constructor call
                 2) main message properties - mostly this is what we're using to pass our own properties to rabbit and get them back
                 3) the message text
@@ -395,12 +397,6 @@ class ChatRoom(deque):
         """ Send a message through rabbit, but also create the message instance and add it to our internal queue by calling the internal put method
         """
         try:
-
-            self.rmq_channel.basic_publish(self.rmq_exchange_name,
-                                           routing_key=self.rmq_queue_name,
-                                           properties=pika.BasicProperties(
-                                               headers=mess_props.__dict__),
-                                           body=message, mandatory=True)
             logging.info(
                 f'Publish to messaging server succeeded. Message: {message}')
             self.put(ChatMessage(message=message, mess_props=mess_props))

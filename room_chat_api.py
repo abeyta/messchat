@@ -30,6 +30,7 @@ logging.basicConfig(filename='chat.log', level=logging.INFO)
 async def index():
     return {"message": {"from": "me", "to": "you"}}
 
+
 @app.get("/messages/", status_code=200)
 async def get_messages(request: Request, alias: str, exchange_name: str, group_queue: bool = False, messages_to_get: int = GET_ALL_MESSAGES):
     """ Get the messages from the appropriate queue instance. 
@@ -128,8 +129,11 @@ async def send_message(queue_name: str, message: str, from_alias: str, to_alias:
         logging.debug(f'Trying to send, have an invalid destination alias: {to_alias}')
         return JSONResponse(status_code=410, content="Invalid destination alias")
     """
-    rmq_instance = ChatRoom(queue_name=queue_name, exchange_name=queue_name)
-    mess_props = MessProperties(mess_type=MESSAGE_TYPE_SENT, to_user=to_alias, from_user=from_alias)
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+    mess_props = MessProperties(mess_type=MESSAGE_TYPE_SENT,
+                                to_user=to_alias,
+                                from_user=from_alias,
+                                room_name=queue_name)
     if rmq_instance.send_message(message=message, mess_props=mess_props) is True:
         return "Success"
     else:

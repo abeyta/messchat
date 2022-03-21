@@ -1225,3 +1225,1434 @@ ERROR:uvicorn.error:Traceback (most recent call last):
     await getter
 asyncio.exceptions.CancelledError
 
+INFO:uvicorn.error:Started server process [57101]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [57101]
+INFO:uvicorn.error:Started server process [57713]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [57713]
+INFO:uvicorn.error:Started server process [57745]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [57745]
+INFO:uvicorn.error:Started server process [58991]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, exchange_name=queue_name)
+TypeError: __init__() got an unexpected keyword argument 'exchange_name'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, exchange_name=queue_name)
+TypeError: __init__() got an unexpected keyword argument 'exchange_name'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, exchange_name=queue_name)
+TypeError: __init__() got an unexpected keyword argument 'exchange_name'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [58991]
+INFO:uvicorn.error:Started server process [65909]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [65909]
+INFO:uvicorn.error:Started server process [65935]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name)
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [65935]
+INFO:uvicorn.error:Started server process [66452]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [66452]
+INFO:uvicorn.error:Started server process [66462]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [66462]
+INFO:uvicorn.error:Started server process [66523]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [66523]
+INFO:uvicorn.error:Started server process [66939]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=[], owner_alias=from_alias)
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=[], owner_alias=from_alias)
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=[], owner_alias=from_alias)
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=[], owner_alias=from_alias)
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=[], owner_alias=from_alias)
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [66939]
+INFO:uvicorn.error:Started server process [68185]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [68185]
+INFO:uvicorn.error:Started server process [68212]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [68212]
+INFO:uvicorn.error:Started server process [68332]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [68332]
+INFO:uvicorn.error:Started server process [68351]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias=from_alias)
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias=from_alias)
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [68351]
+INFO:uvicorn.error:Started server process [68691]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [68691]
+INFO:uvicorn.error:Started server process [68737]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [68737]
+INFO:uvicorn.error:Started server process [68876]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [68876]
+INFO:uvicorn.error:Started server process [68897]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [68897]
+INFO:uvicorn.error:Started server process [69499]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Nora')
+  File "./rmq.py", line 146, in __init__
+    self.add_room_member(self.owner)
+AttributeError: 'ChatRoom' object has no attribute 'owner'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [69499]
+INFO:uvicorn.error:Started server process [76123]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [76123]
+INFO:uvicorn.error:Started server process [76745]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [76745]
+INFO:uvicorn.error:Started server process [76922]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [76922]
+INFO:uvicorn.error:Started server process [77003]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [77003]
+INFO:uvicorn.error:Started server process [77061]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [77061]
+INFO:uvicorn.error:Started server process [77080]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [77080]
+INFO:uvicorn.error:Started server process [77089]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [77089]
+INFO:uvicorn.error:Started server process [77109]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [77109]
+INFO:uvicorn.error:Started server process [77153]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [77153]
+INFO:uvicorn.error:Started server process [77247]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [77247]
+INFO:uvicorn.error:Started server process [77261]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [77261]
+INFO:uvicorn.error:Started server process [77318]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [77318]
+INFO:uvicorn.error:Started server process [78116]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [78116]
+INFO:uvicorn.error:Started server process [79546]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/applications.py", line 212, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 226, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/adrianabeyta/opt/anaconda3/lib/python3.8/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./room_chat_api.py", line 132, in send_message
+    rmq_instance = ChatRoom(queue_name=queue_name, member_list=['Adrian'], owner_alias='Adrian')
+  File "./rmq.py", line 145, in __init__
+    self.add_room_member(self.__owner)
+  File "./rmq.py", line 413, in add_room_member
+    self.___member_list.add(user_name)
+AttributeError: 'ChatRoom' object has no attribute '_ChatRoom___member_list'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [79546]
+INFO:uvicorn.error:Started server process [79955]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [79955]
+INFO:uvicorn.error:Started server process [79982]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [79982]
+INFO:uvicorn.error:Started server process [79994]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [79994]
+INFO:uvicorn.error:Started server process [80211]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [80211]
+INFO:uvicorn.error:Started server process [80257]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
