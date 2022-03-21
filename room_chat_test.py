@@ -1,3 +1,6 @@
+"""Group Memebrs: Matt Moore, Adrian Abeyta, Ahmad Moltafet
+"""
+
 from email import message
 import json
 import requests
